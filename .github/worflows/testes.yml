@@ -1,0 +1,27 @@
+name: Testes Automatizados ANVISA
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependências
+        run: |
+          pip install playwright
+          playwright install
+
+      - name: Rodar os testes
+        run: python playwright_test.py

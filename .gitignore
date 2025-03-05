@@ -18,7 +18,7 @@ logs/
 *.json
 *.xml
 *.jtl  # Arquivos de resultado do JMeter
-reports/
+#reports/
 
 # 🚀 Playwright e Selenium
 playwright/.cache/
